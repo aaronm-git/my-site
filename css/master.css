@@ -10,7 +10,6 @@ font-family: 'Roboto', sans-serif;
 }
 
 body {
-  padding-top: 6rem;
   height: 5000px;
   /* #051937 dark blue
   #A8EB12 light green */
@@ -19,6 +18,14 @@ body {
 nav {
   background-color: rgba(255, 255, 255, 0.9);
   position: relative;
+}
+
+article {
+  margin-top: 5rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
 }
 
 .scroll-to {
@@ -69,9 +76,21 @@ nav {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.container {
-  position: relative;
+.alt-background {
+  background-color: #f2f2f2;
+  padding-top: 2rem;
+  border-radius: 5px;
+}
 
+.card {
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  object-fit: cover; /* Do not scale the image */
+  object-position: top;; /* Center the image within the element */
+  width: 100%;
+  max-height: 250px;
 }
 
 @media (max-width : 480px) {
