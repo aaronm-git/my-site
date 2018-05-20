@@ -19,9 +19,14 @@ name
 highlight
 #363A4D */
 
+* {
+    outline: 1px solid red;
+}
+
 .text-editor {
+    padding: 2rem 2rem;
     background-color: #30333F;
-    height: 500px;
+    min-height: 32rem;
 }
 
 .text-editor * {
@@ -36,7 +41,7 @@ highlight
 }
 
 #typewriter{
-		font-size: 2em;
+		font-size: 2rem;
 		margin: 0;
 		font-family: "Courier New";
 }
