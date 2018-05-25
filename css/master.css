@@ -19,18 +19,41 @@ name
 highlight
 #363A4D */
 
-* {
+/* * {
     outline: 1px solid red;
+} */
+
+.fab {
+    font-size: 4.5rem;
+    color: black;
 }
 
 .text-editor {
-    padding: 2rem 2rem;
+    padding: 2rem 1rem;
     background-color: #30333F;
-    min-height: 32rem;
+    min-height: 28.5rem;
 }
 
 .text-editor * {
     color: white;
+}
+
+p.textEditText {
+    color: darkgrey;
+    display: block;
+    font-family: "Courier New";
+    margin-bottom: 1.5rem;
+}
+
+.textEdit-div {
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    background-color: #24252d;
+    padding-top: 3rem;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+    padding-bottom: 1.5rem;
 }
 
 .var-highlight{
