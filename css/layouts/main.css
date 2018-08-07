@@ -1,9 +1,53 @@
 .main-avatar {
 	border-radius: 50px;
-	/* float: right; */
 	margin-left: 1em;
 	width: 100px;
 	height: 100px;
 	position: relative;
 	bottom: 16px;
+}
+
+.main-avatar.about {
+	bottom: 0px;
+	float: right;
+	margin-right: 0px;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+}
+
+h2 > small {
+	font-size: 0.5em;
+	color: #999;
+	float: right;
+	position: relative;
+	top: 1em;
+}
+
+.footer {
+	padding: 1em 0;
+}
+.footer a {
+	color: #ccc;
+	font-size: 80%;
+}
+
+.blog-nav {
+	list-style-type: none;
+}
+
+.blog-nav li {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.blog-nav a {
+	padding: 0.5em 1em;
+}
+
+.footer .blog-nav a:hover,
+.footer .blog-nav a:focus {
+	background: none;
 }

@@ -121,17 +121,20 @@ h3 {
 	background: #999;
 	font-size: 80%;
 }
-.post-category-design {
+.post-category-pinned {
 	background: #5aba59;
 }
-.post-category-pure {
-	background: #4d85d1;
+.post-category-personal {
+	background: royalblue;
 }
-.post-category-yui {
-	background: #8156a7;
+.post-category-php {
+	background: blueviolet;
+}
+.post-category-html {
+	background: red;
 }
 .post-category-js {
-	background: #df2d4f;
+	background: yellow;
 }
 
 .post-images {
