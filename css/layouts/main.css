@@ -1,3 +1,7 @@
+p {
+	line-height: 1.75em;
+}
+
 .main-avatar {
 	border-radius: 50px;
 	margin-left: 1em;
@@ -15,12 +19,15 @@
 	filter: grayscale(100%);
 }
 
-h2 > small {
-	font-size: 0.5em;
+.sub-text {
+	font-size: 1em;
 	color: #999;
+	margin-top: 0%;
 	float: right;
-	position: relative;
-	top: 1em;
+}
+
+h2 {
+	display: inline;
 }
 
 .footer {
@@ -50,4 +57,10 @@ h2 > small {
 .footer .blog-nav a:hover,
 .footer .blog-nav a:focus {
 	background: none;
+}
+
+@media (max-width: 600px) {
+	.sub-text {
+		float: none;
+	}
 }
