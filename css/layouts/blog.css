@@ -8,6 +8,7 @@ a {
 	text-decoration: none;
 	color: rgb(61, 146, 201);
 }
+
 a:hover,
 a:focus {
 	text-decoration: underline;
@@ -42,9 +43,11 @@ h3 {
 .brand-tagline {
 	margin: 0;
 }
+
 .brand-title {
 	text-transform: uppercase;
 }
+
 .brand-tagline {
 	font-weight: 300;
 	color: rgb(176, 202, 219);
@@ -55,11 +58,13 @@ h3 {
 	padding: 0;
 	list-style: none;
 }
+
 .nav-item {
 	display: inline-block;
 	*display: inline;
 	zoom: 1;
 }
+
 .nav-item a {
 	background: transparent;
 	border: 2px solid rgb(176, 202, 219);
@@ -69,11 +74,16 @@ h3 {
 	text-transform: uppercase;
 	font-size: 85%;
 }
+
 .nav-item a:hover,
 .nav-item a:focus {
 	border: 2px solid rgb(61, 146, 201);
 	text-decoration: none;
 	background: none;
+}
+
+.content {
+	padding: 1em;
 }
 
 .content-subhead {
@@ -86,28 +96,28 @@ h3 {
 	letter-spacing: 0.1em;
 }
 
-.content {
-	padding: 2em 1em 0;
-}
-
 .post {
 	padding-bottom: 2em;
 }
+
 .post-title {
 	font-size: 2em;
 	color: #222;
 	margin-bottom: 0.2em;
 }
+
 .post-avatar {
 	border-radius: 50px;
 	float: right;
 	margin-left: 1em;
 }
+
 .post-description {
 	font-family: Georgia, "Cambria", serif;
 	color: #444;
 	line-height: 1.8em;
 }
+
 .post-meta {
 	color: #999;
 	font-size: 90%;
@@ -121,18 +131,23 @@ h3 {
 	background: #999;
 	font-size: 80%;
 }
+
 .post-category-pinned {
 	background: #5aba59;
 }
+
 .post-category-personal {
 	background: royalblue;
 }
+
 .post-category-php {
 	background: blueviolet;
 }
+
 .post-category-html {
 	background: red;
 }
+
 .post-category-js {
 	background: yellow;
 }
@@ -140,6 +155,7 @@ h3 {
 .post-images {
 	margin: 1em 0;
 }
+
 .post-image-meta {
 	margin-top: -3.5em;
 	margin-left: 1em;
@@ -147,13 +163,11 @@ h3 {
 	text-shadow: 0 1px 1px #333;
 }
 
-.footer {
-	padding: 1em 0;
-}
-.footer a {
+/* .footer a {
 	color: #ccc;
 	font-size: 80%;
-}
+} */
+
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
 	background: none;
@@ -161,12 +175,12 @@ h3 {
 
 @media (min-width: 48em) {
 	.content {
-		padding: 2em 3em 0;
+		padding: 3em;
 		margin-left: 25%;
 	}
 
 	.header {
-		margin: 80% 2em 0;
+		margin: 50% 2em 0 0;
 		text-align: right;
 	}
 
