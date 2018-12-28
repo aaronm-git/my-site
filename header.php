@@ -18,9 +18,14 @@
                 <a href="<?php echo get_bloginfo('wpurl'); ?>">
                     <img alt="Aaron Molina&#x27;s avatar" class="main-avatar" src="
                     <?php
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                    echo $image[0];
+                        if (has_custom_logo()) {
+                            $custom_logo_id = get_theme_mod( 'custom_logo' );
+                            $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                            echo $image[0];
+                        }
+                        else {
+                            echo get_template_directory_uri()."/resources/pictures/default-pic.png";
+                        }
                     ?>
                     ">
                 </a>
