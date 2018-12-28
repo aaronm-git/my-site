@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aaron's Portfolio | Front-end Web Developer in Miami">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <title><?php echo get_bloginfo('name'); ?> | <?php echo get_bloginfo('description'); ?></title>
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
