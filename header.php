@@ -13,14 +13,14 @@
 
 <body>
     <div id="layout" class="pure-g">
-        <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="sidebar pure-u-1 pure-u-md-1-5">
             <div class="header">
                 <a href="<?php echo get_bloginfo('wpurl'); ?>">
-                    <img alt="Aaron Molina&#x27;s avatar" class="main-avatar" src="
+                    <img alt="Aaron Molina&#x27;s avatar" class="main-avatar pure-img" src="
                     <?php
                         if (has_custom_logo()) {
                             $custom_logo_id = get_theme_mod( 'custom_logo' );
-                            $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                            $image = wp_get_attachment_image_src( $custom_logo_id , 'full');
                             echo $image[0];
                         }
                         else {
@@ -35,10 +35,10 @@
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a class="pure-button" href="home">Home</a>
+                            <a class="pure-button" href="./">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="pure-button" href="posts">Blog</a>
+                            <a class="pure-button" href="?page_id=47">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a class="pure-button" target="_blank" rel="nofollow" href="https://visualcv.com/aaron-molina">Resume</a>
@@ -48,5 +48,6 @@
             </div>
         </div>
 
-        <div class="content pure-u-1 pure-u-md-3-4">
-
+        <?php if (!is_front_page() && !is_404()) get_sidebar(); ?>
+        <div class="content pure-u-1 <?php if (!is_front_page() && !is_404()) { echo "pure-u-md-3-5";} else {
+            echo "pure-u-md-4-5"; }?>">
