@@ -1,7 +1,7 @@
 /*
 Theme Name: PureCSS Blog Theme  
 Github Theme URI: https://github.com/aaronm-git/pureCSS-Blog-WordPress-Theme
-Description: PureCSS.io inspired WordPress theme inspired by PureCSS's Blog theme.
+Description: WordPress theme inspired by PureCSS's Blog theme.
 Author: Aaron Molina
 Author URI: https://www.aaronmolina.me/
 Version: v0.1.2
@@ -21,6 +21,10 @@ a {
 a:hover,
 a:focus {
 	text-decoration: underline;
+}
+
+h1 a {
+color: black;
 }
 
 h3 {
@@ -46,6 +50,22 @@ h3 {
 .sidebar {
 	background: rgb(61, 79, 93);
 	color: #fff;
+}
+
+.widget {
+	background: #f2f2f2;
+	color: black;
+	overflow: scroll;
+}
+
+.widget h3 {
+	/* font-weight: 400; */
+	font-size: 1.5em;
+	margin-bottom: 0px;
+}
+
+.widget ul {
+	list-style: none;
 }
 
 .brand-title,
@@ -104,15 +124,46 @@ h3 {
 	letter-spacing: 0.1em;
 }
 
+.post-description img {
+	width: 100%;
+}
+
 .post {
 	padding-bottom: 2em;
 }
 
-.post-title {
-	font-size: 2em;
-	color: #222;
-	margin-bottom: 0.2em;
+.post-title:hover {
+	text-decoration: none;
 }
+
+/*effect-underline*/
+.wrapper {
+	display: inline-block;
+	position: relative;
+	top: 50%;
+  }
+
+a.post-title:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	display: inline-block;
+	height: 1em;
+	width: 100%;
+	border-bottom: 2px solid rgb(61, 146, 201);
+	margin-top: 10px;
+	opacity: 0;
+		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+		transition: opacity 0.35s, transform 0.35s;
+		-webkit-transform: scale(0,1);
+		transform: scale(0,1);
+}
+
+a.post-title:hover:after {
+	opacity: 1;
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+  }
 
 .post-avatar {
 	border-radius: 50px;
@@ -136,12 +187,12 @@ h3 {
 	margin: 0 0.1em;
 	padding: 0.3em 1em;
 	color: #fff;
-	background: #999;
+	background: grey;
 	font-size: 80%;
 }
 
-.post-category-pinned {
-	background: #45a831;
+.post-category-css {
+	background: limegreen;
 }
 
 .post-category-personal {
@@ -149,15 +200,16 @@ h3 {
 }
 
 .post-category-php {
-	background: blueviolet;
+	background: darkorchid;
 }
 
 .post-category-html {
-	background: rgb(155, 0, 0);
+	background: crimson;
 }
 
 .post-category-js {
-	background: rgb(173, 127, 0);
+	background: orange;
+	/* color: black; */
 }
 
 .post-images {
@@ -171,11 +223,6 @@ h3 {
 	text-shadow: 0 1px 1px #333;
 }
 
-/* .footer a {
-	color: #ccc;
-	font-size: 80%;
-} */
-
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
 	background: none;
@@ -184,11 +231,15 @@ h3 {
 @media (min-width: 48em) {
 	.content {
 		padding: 2em;
-		margin-left: 25%;
+		margin-left: calc(100%/5);
+	}
+
+	.widget-space {
+		margin-right: 20%;
 	}
 
 	.header {
-		margin: 50% 2em 0 0;
+		margin: 35% 2em 0 0;
 		text-align: right;
 	}
 
@@ -197,12 +248,32 @@ h3 {
 		top: 0;
 		bottom: 0;
 	}
+
+	.widget {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+	}
+
+	.post-edit-link {
+		position: absolute;
+		right: 2em;
+		top: 0;
+	}
+
+	.main-avatar {
+		margin-left: auto;
+		margin-right: 0px !important;
+	}
 }
 
 .main-avatar {
-	max-width: 10em;
-	margin-bottom: 1em;
-	border-radius: 100px;
+	max-width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+	border-radius: 50%;
 }
 
 .main-avatar.about {
@@ -211,13 +282,6 @@ h3 {
 	margin-right: 0px;
 	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 	filter: grayscale(100%);
-}
-
-.sub-text {
-	font-size: 1em;
-	color: #999;
-	float: right;
-	margin-top: 0.83em;
 }
 
 h2 {
@@ -229,8 +293,7 @@ h2 {
 	text-align: center;
 }
 .footer a {
-	color: #ccc;
-	font-size: 80%;
+	color: lightgray;
 }
 
 .blog-nav {
@@ -255,16 +318,10 @@ h2 {
 	background: none;
 }
 
-@media (max-width: 1200px) {
-	.sub-text {
-		float: none;
-	}
-}
-
 .post-description {
 	margin-top: 1em;
-	max-height: 200px;
-	overflow: scroll;
+	/* max-height: 200px;
+	overflow: scroll; */
 }
 
 section h2 {
@@ -301,4 +358,9 @@ ul.share-buttons .sr-only {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
+}
+
+center-img {
+	margin-left: auto;
+	margin-right: auto;
 }
