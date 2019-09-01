@@ -1,13 +1,73 @@
 <?php
-	// Load stylesheets
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	// Load the theme stylesheets
+	function theme_styles()  { 
+		// Example of loading a jQuery slideshow plugin just on the homepage
+		// wp_register_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css' );
 
-	// Enable support for custom logo.
-	add_theme_support( 'custom-logo', array(
-		'height'      => 1000,
-		'width'       => 1000,
-		'flex-height' => true,
-	) );
+		// Load all of the styles that need to appear on all pages
+		wp_enqueue_style( 'pure', get_template_directory_uri() . '/resources/css/pure-min.css' );
+		wp_enqueue_style( 'grids-responsive', get_template_directory_uri() . '/resources/css/grids-responsive-min.css' );
+		wp_enqueue_style( 'blog', get_template_directory_uri() . '/resources/css/blog.css' );
+		wp_enqueue_style( 'main', get_stylesheet_uri() );
+	
+		// Conditionally load the FlexSlider CSS on the homepage
+		// if(is_page('home')) {
+		// 	wp_enqueue_style('flexslider');
+		// }
+	}
+
+	// Website logo/profile picture
+	function website_logo_url() {
+		if (has_custom_logo()) {
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$image = wp_get_attachment_image_src( $custom_logo_id , 'full');
+			echo $image[0];
+		}
+		else {
+			echo get_template_directory_uri()."/resources/pictures/default-pic.png";
+		}
+	}
+
+	add_action('wp_enqueue_scripts', 'theme_styles');
+
+		// Enable support for custom logo.
+		add_theme_support( 'custom-logo', array(
+			'height'      => 1000,
+			'width'       => 1000,
+			'flex-height' => true,
+		) );
+
+	// Show only sticky posts
+	function onlyStickyPosts() {
+		$sticky = get_option('sticky_posts');
+        // check if there are any
+        if (!empty($sticky)) {
+            // optional: sort the newest IDs first
+            rsort($sticky);
+            // override the query
+            $args = array(
+                'post__in' => $sticky
+            );
+            query_posts($args);
+            // the loop
+            while (have_posts()) {
+                the_post();
+                // your code
+                get_template_part('article');
+                }
+            }
+		wp_reset_query();
+	}
+
+	// Show posts
+	function showPosts() {
+		while (have_posts()) {
+            the_post();
+            get_template_part('article');
+        }
+        the_posts_pagination();
+		wp_reset_query();
+	}
 	
 	//Posts excerpt settings
 	function new_excerpt_more( $more ) {
@@ -21,7 +81,6 @@
 		if ($query->is_home() && $query->is_main_query() ) {
 			$query->set( 'posts_per_page', '5' );
 			$query->set('post__not_in', get_option('sticky_posts'));
-
 		}
 	}
 	add_action( 'pre_get_posts', 'post_pagination' );
@@ -97,5 +156,12 @@
 		}
 		add_action('init', 'df_disable_comments_admin_bar');
 		
+		// Replace footer menu links classes with pure's classes
+		add_filter('wp_list_pages', create_function('$t', 'return str_replace("<li ", "<li class=\"pure-menu-item\" ", $t);'));
+		add_filter('wp_list_pages', create_function('$t', 'return str_replace("<a ", "<a class=\"pure-menu-link\" ", $t);'));
+
+		// Main menu filter
+		add_filter('wp_list_pages', create_function('$t', 'return str_replace("<li ", "<li class=\"pure-menu-item\" ", $t);'));
+		add_filter('wp_list_pages', create_function('$t', 'return str_replace("<a ", "<a class=\"pure-menu-link\" ", $t);'));		
 	}
 ?>

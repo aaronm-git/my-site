@@ -26,7 +26,7 @@
         <h1 class="content-subhead">Meta</h1>
         <span><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
         <span>This post was written by <?php the_author_posts_link(); ?></span>
-
+        <br>
         <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
     </div>
 
