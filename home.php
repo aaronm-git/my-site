@@ -2,37 +2,16 @@
 
 <div class="posts">
     <h1 class="content-subhead">Pinned Posts</h1>
-    <?php // get sticky posts from DB
-        $sticky = get_option('sticky_posts');
-        // check if there are any
-        if (!empty($sticky)) {
-            // optional: sort the newest IDs first
-            rsort($sticky);
-            // override the query
-            $args = array(
-                'post__in' => $sticky
-            );
-            query_posts($args);
-            // the loop
-            while (have_posts()) {
-                the_post();
-                // your code
-                get_template_part('article');
-                }
-            }
-        wp_reset_query();
-    ?>
-</div> <!-- colses the posts div -->
+    <?php onlyStickyPosts(); ?>
 
-<div class="posts">
+    <?php if (have_posts() > 0): ?>
     <h1 class="content-subhead">Recent Posts</h1>
-    <?php
-        while (have_posts()) {
-            the_post();
-            get_template_part('article');
-        }
-        the_posts_pagination();
-    ?>
+    <?php showPosts() !== '' ?>
+    <?php else: echo '<h1 class="content-subhead">No posts to display</h1>'?>
+    <?php endif; ?>
 </div> <!-- closes the posts div -->
 
-<?php get_footer();?>
+<?php # if (!is_front_page() && !is_404())
+get_sidebar(); ?> <!-- Gets blog sidebar if its not the home or 404 page-->
+
+<?php get_footer(); ?>

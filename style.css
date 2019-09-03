@@ -4,191 +4,13 @@ Github Theme URI: https://github.com/aaronm-git/pureCSS-Blog-WordPress-Theme
 Description: WordPress theme inspired by PureCSS's Blog theme.
 Author: Aaron Molina
 Author URI: https://www.aaronmolina.me/
-Version: v0.0.3
+Version: v0.1.0
 */
 
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-a {
-	text-decoration: none;
-	color: rgb(61, 146, 201);
-}
-
-a:hover,
-a:focus {
-	text-decoration: underline;
-}
-
-h1 a {
-color: black;
-}
-
-h3 {
-	font-weight: 100;
-}
-
-/* LAYOUT CSS */
-.pure-img-responsive {
-	max-width: 100%;
-	height: auto;
-}
-
-#layout {
-	padding: 0;
-}
-
-.header {
-	text-align: center;
-	top: auto;
-	margin: 3em auto;
-}
-
-.sidebar {
-	background: rgb(61, 79, 93);
-	color: #fff;
-}
-
-.widget {
-	background: #f2f2f2;
-	color: black;
-	overflow: scroll;
-}
-
-.widget h3 {
-	/* font-weight: 400; */
-	font-size: 1.5em;
-	margin-bottom: 0px;
-}
-
-.widget ul {
-	list-style: none;
-}
-
-.brand-title,
-.brand-tagline {
-	margin: 0;
-}
-
-.brand-title {
-	text-transform: uppercase;
-}
-
-.brand-tagline {
-	font-weight: 300;
-	color: rgb(176, 202, 219);
-}
-
-.nav-list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.nav-item {
-	display: inline-block;
-	zoom: 1;
-}
-
-.nav-item a {
-	background: transparent;
-	border: 2px solid rgb(176, 202, 219);
-	color: #fff;
-	margin-top: 1em;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
-	font-size: 85%;
-}
-
-.nav-item a:hover,
-.nav-item a:focus {
-	border: 2px solid rgb(61, 146, 201);
-	text-decoration: none;
-	background: none;
-}
-
-.content {
-	padding: 1em;
-}
-
-.content-subhead {
-	text-transform: uppercase;
-	color: #aaa;
-	border-bottom: 1px solid #eee;
-	padding: 0.4em 0;
-	font-size: 80%;
-	font-weight: 500;
-	letter-spacing: 0.1em;
-}
-
-.post-description img {
-	width: 100%;
-}
-
-.post {
-	padding-bottom: 2em;
-}
-
-.post-title:hover {
-	text-decoration: none;
-}
-
-/*effect-underline*/
-.wrapper {
-	display: inline-block;
-	position: relative;
-	top: 50%;
-  }
-
-a.post-title:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	display: inline-block;
-	height: 1em;
-	width: 100%;
-	border-bottom: 2px solid rgb(61, 146, 201);
-	margin-top: 10px;
-	opacity: 0;
-		-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-		transition: opacity 0.35s, transform 0.35s;
-		-webkit-transform: scale(0,1);
-		transform: scale(0,1);
-}
-
-a.post-title:hover:after {
-	opacity: 1;
-	  -webkit-transform: scale(1);
-	  transform: scale(1);
-  }
-
-.post-avatar {
-	border-radius: 50px;
-	float: right;
-	margin-left: 1em;
-}
-
-.post-description {
-	font-family: Georgia, "Cambria", serif;
-	color: #444;
-	line-height: 1.8em;
-}
-
-.post-meta {
-	color: #999;
-	font-size: 90%;
-	margin: 0;
-}
-
-.post-category {
-	margin: 0 0.1em;
-	padding: 0.3em 1em;
-	color: #fff;
-	background: grey;
-	font-size: 80%;
+.website-logo {
+	max-height: 150px;
+	border-radius: 50%;
+	margin: 1rem auto;
 }
 
 .post-category-css {
@@ -212,155 +34,55 @@ a.post-title:hover:after {
 	/* color: black; */
 }
 
-.post-images {
-	margin: 1em 0;
+.post-title a {
+	color: black;
 }
 
-.post-image-meta {
-	margin-top: -3.5em;
-	margin-left: 1em;
-	color: #fff;
-	text-shadow: 0 1px 1px #333;
+.post-title a:hover {
+	text-decoration: none;
 }
 
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-	background: none;
+.widget ul {
+	list-style-type: none;
 }
 
-@media (min-width: 48em) {
-	.content {
-		padding: 2em;
-		margin-left: calc(100%/5);
-	}
-
-	.widget-space {
-		margin-right: 20%;
-	}
-
-	.header {
-		margin: 35% 2em 0 0;
-		text-align: right;
-	}
-
-	.sidebar {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-	}
-
-	.widget {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		right: 0;
-	}
-
-	.post-edit-link {
-		position: absolute;
-		right: 2em;
-		top: 0;
-	}
-
-	.main-avatar {
-		margin-left: auto;
-		margin-right: 0px !important;
-	}
+.footer-logo img {
+	margin: 0.5rem 0.75rem;
+	max-height: 2rem;
 }
 
-.main-avatar {
-	max-width: 200px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.5em;
-	border-radius: 50%;
-}
-
-.main-avatar.about {
-	bottom: 0px;
-	float: right;
-	margin-right: 0px;
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-	filter: grayscale(100%);
-}
-
-h2 {
-	display: inline-block;
-}
-
-.footer {
-	padding: 1em 0;
-	text-align: center;
-}
-.footer a {
-	color: lightgray;
-}
-
-.blog-nav {
+.footer ul {
 	list-style-type: none;
 	padding: 0;
 }
 
-.blog-nav li {
-	display: inline-flex;
-	vertical-align: middle;
-	padding: 0;
-	margin: 0;
-	height: 100%;
+.post-description img {
+	max-width: 100%;
 }
 
-.blog-nav a {
-	padding: 0.5em 1em;
-}
+@media (min-width: 48em) {
+	.content {
+		/* padding: 2em 3em 0;
+        margin-left: 25%; */
+	}
 
-.footer .blog-nav a:hover,
-.footer .blog-nav a:focus {
-	background: none;
-}
+	.header {
+		margin: 60% 2em 0;
+		/* text-align: right; */
+	}
 
-.post-description {
-	margin-top: 1em;
-	/* max-height: 200px;
-	overflow: scroll; */
-}
+	.sidebar {
+		/* position: fixed;
+        top: 0;
+        bottom: 0; */
+	}
 
-section h2 {
-	display: inline-block;
-	margin-bottom: 0.25em;
-}
-
-section ul li {
-	margin: 0.75em 0px;
-	position: relative;
-}
-
-section ul li img {
-	height: 2em;
-	position: absolute;
-	bottom: 0em;
-}
-
-ul.share-buttons {
-	list-style: none;
-	padding: 0;
-}
-
-ul.share-buttons li {
-	display: inline;
-}
-
-ul.share-buttons .sr-only {
-	position: absolute;
-	clip: rect(1px 1px 1px 1px);
-	clip: rect(1px, 1px, 1px, 1px);
-	padding: 0;
-	border: 0;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-}
-
-center-img {
-	margin-left: auto;
-	margin-right: auto;
+	.footer {
+		/* text-align: center; */
+	}
+	/* My code: */
+	.website-logo {
+		margin-left: auto;
+		margin-right: 0px;
+	}
 }
