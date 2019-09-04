@@ -38,6 +38,14 @@ add_theme_support('custom-logo', array(
 	'flex-height' => true,
 ));
 
+// Are there any sticky posts?
+function areThereStickyPosts()
+{
+	$sticky = get_option('sticky_posts');
+	// check if there are any
+	return !empty($sticky) ? true : false;
+}
+
 // Show only sticky posts
 function onlyStickyPosts()
 {
