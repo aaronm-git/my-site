@@ -61,13 +61,6 @@ function onlyStickyPosts()
 	wp_reset_query();
 }
 
-// Get author nickname or name
-function getAuthorAlias()
-{
-	$nickname = get_the_author_meta('nickname');
-	return $nickname ? the_author_meta('nickname') : the_author_meta('display_name');
-}
-
 // Show posts
 function showPosts()
 {
@@ -79,10 +72,11 @@ function showPosts()
 	wp_reset_query();
 }
 
-//Posts excerpt settings
+// Replaces the excerpt "Read More" text by a link
 function new_excerpt_more($more)
 {
-	return ' <a class="read-more" href="' . get_permalink(get_the_ID()) . '">' . __('Read More', 'your-text-domain') . '</a>';
+	global $post;
+	return '<a class="moretag" href="' . get_permalink($post->ID) . '"> Read the full article...</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
