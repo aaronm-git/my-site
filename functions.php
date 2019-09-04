@@ -61,13 +61,6 @@ function onlyStickyPosts()
 	wp_reset_query();
 }
 
-// Get author nickname or name
-function getAuthorAlias()
-{
-	$nickname = get_the_author_meta('nickname');
-	return $nickname ? the_author_meta('nickname') : the_author_meta('display_name');
-}
-
 // Show posts
 function showPosts()
 {

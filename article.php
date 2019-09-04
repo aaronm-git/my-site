@@ -7,7 +7,7 @@
         <p class="post-meta">
             By
             <a class="post-author" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
-                <?php getAuthorAlias(); ?></a> under
+                <?php the_author_meta('display_name') ?></a> under
             <?php foreach ((get_the_category()) as $category) {
                 echo "<a class='post-category post-category-$category->slug' style='background-color:"
                     . get_term_meta($category->cat_ID, 'color', true)
